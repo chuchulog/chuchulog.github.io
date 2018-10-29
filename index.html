@@ -38,4 +38,38 @@
         <img class="img2" src="img/ewm.png" alt="">
     </div>
 </body>
+<script src="loader.js"></script>
+<script>
+    var loader = new resLoader({
+        resources : [
+            './img2/1.png',
+            './img2/2.png',
+            './img2/3.png',
+            './img2/4.png',
+            './img2/5.png',
+            './img2/6.png',
+            './img2/7.png',
+            './img2/8.png',
+            './img2/9.png',
+            './img2/10.png',
+            './img2/11.png',
+            './img2/12.png',
+            './img2/js1.js',
+            './img2/three.js',
+            './img2/mp3.mp3',
+        ],
+        onStart:function(total){
+            console.log('start:'+total);
+        },
+        onProgress:function(current,total){
+            console.log(current+'/'+total);
+            var percent = current/total*100;
+        },
+        onComplete:function(total){
+            console.log('加载完成')
+        }
+    })
+    loader.start();
+
+</script>
 </html>
