@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="http://s0.qhimg.com/lib/jquery/183.js"></script>
 </head>
 <body>
-    
+    <p id="percent"></p>
 </body>
 <script src="loader.js"></script>
 <script>
@@ -25,7 +26,7 @@
             './img/10.png',
             './img/11.png',
             './img/12.png',
-            './img/js1.js',
+            './img/js.js',
             './img/three.js',
             './img/mp3.mp3',
         ],
@@ -35,12 +36,15 @@
         onProgress:function(current,total){
             console.log(current+'/'+total);
             var percent = current/total*100;
+
+            $("#percent").html(percent+'%');
         },
         onComplete:function(total){
             console.log('加载完成')
         }
     })
     loader.start();
+
 
 </script>
 </html>
